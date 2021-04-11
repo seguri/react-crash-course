@@ -1,16 +1,16 @@
-import Button from './Button'
+import Button from "./Button";
 
-const Header = () => {
-  const onClick = () => {
-    console.log('click')
-  }
-
+const Header = ({ onAdd, showAdd }) => {
   return (
-    <header className='header'>
+    <header className="header">
       <h1>Task Tracker</h1>
-      <Button onClick={onClick}/>
+      <Button
+        color={showAdd ? "red" : "green"}
+        text={showAdd ? "Close" : "Add"}
+        onClick={onAdd}
+      />
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
