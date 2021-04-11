@@ -28,11 +28,15 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  const toggleRemeinder = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className="container">
       <Header />
       {tasks.length > 0 ? (
-        <Tasks tasks={tasks} onDelete={deleteTask} />
+        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleRemeinder} />
       ) : (
         "No Tasks to show"
       )}
